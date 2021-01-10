@@ -1,0 +1,25 @@
+package com.lgy.controller;
+
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class HelloController implements Controller {
+    public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
+
+        ModelAndView mv = new ModelAndView();
+
+        //业务代码
+        String reslut = "nihao";
+
+        mv.addObject("msg",reslut);
+        //视图解析
+        mv.setViewName("index");
+
+
+
+        return mv;
+    }
+}
